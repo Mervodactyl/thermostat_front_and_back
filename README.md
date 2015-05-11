@@ -1,3 +1,3 @@
 # thermostat_front_and_back
 
-this is my example
+Thermostat written in JavaScript - Front & Back
