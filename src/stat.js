@@ -1,7 +1,7 @@
 var Stat = function() {
   this.defaultTemperature = 20;
   this.minimumTemperature = 10;
-  this.maximumTemperature = 50;
+  this.maximumTemperature = 32;
   this.powerSavingStatus = true;
   this.currentTemperature = this.defaultTemperature;
 };
@@ -20,5 +20,16 @@ Stat.prototype.decreaseTemperature = function(degreesToChangeBy) {
   } else {
     this.currentTemperature -= degreesToChangeBy;
   }
-
 };
+
+Stat.prototype.togglePowerSavingMode = function() {
+  this.powerSavingStatus = false;
+};
+//
+// Stat.prototype.changePowerSavingStatus = function() {
+//   if (this.powerSavingStatus = true) {
+//     this.maximumTemperature = 25;
+//   } else {
+//     this.maximumTemperature = this.maximumTemperature;
+//   }
+// };
