@@ -31,3 +31,7 @@ Stat.prototype.togglePowerSavingMode = function() {
     this.maximumTemperature = 25;
   }
 };
+
+Stat.prototype.resetTemperature = function() {
+  this.currentTemperature = this.defaultTemperature;
+};

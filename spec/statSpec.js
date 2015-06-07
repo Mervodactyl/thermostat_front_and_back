@@ -8,12 +8,12 @@ describe("Stat", function() {
 
   describe("By default, ", function() {
     it("starts at 20 degrees", function() {
-      expect(stat.currentTemperature).toBe(20);
+      expect(stat.currentTemperature).toEqual(20);
     });
 
     it("has a minimum temperature of 10 degrees", function() {
       stat.decreaseTemperature(12);
-      expect(stat.currentTemperature).toBe(10);
+      expect(stat.currentTemperature).toEqual(10);
     });
 
     it("has a maximum temperature of 25 degrees", function() {
@@ -51,7 +51,14 @@ describe("Stat", function() {
       stat.increaseTemperature(13);
       expect(stat.currentTemperature).toEqual(32);
     });
+  });
 
+  describe("has a reset button ", function() {
+    it("which when activated, resets the temperature to 20 degrees", function() {
+      stat.increaseTemperature(2);
+      stat.resetTemperature();
+      expect(stat.currentTemperature).toEqual(20);
+    });
   });
 
 
