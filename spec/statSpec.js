@@ -16,9 +16,9 @@ describe("Stat", function() {
       expect(stat.currentTemperature).toBe(10);
     });
 
-    it("has a maximum temperature of 32 degrees", function() {
-      stat.increaseTemperature(13);
-      expect(stat.currentTemperature).toEqual(32);
+    it("has a maximum temperature of 25 degrees", function() {
+      stat.increaseTemperature(6);
+      expect(stat.currentTemperature).toEqual(25);
     });
   });
 
@@ -42,13 +42,17 @@ describe("Stat", function() {
     it("which can be set to 'OFF'", function() {
       stat.togglePowerSavingMode();
       expect(stat.powerSavingStatus).toBe(false);
+      stat.togglePowerSavingMode();
+      expect(stat.powerSavingStatus).toBe(true);
     });
 
-    xit("which when activated, limits the temperature to 25 degrees", function() {
-      stat.increaseTemperature(6);
-      expect(stat.currentTemperature).toEqual(25);
+    it("which when 'OFF', limits the temperature to 32 degrees", function() {
+      stat.togglePowerSavingMode();
+      stat.increaseTemperature(13);
+      expect(stat.currentTemperature).toEqual(32);
     });
 
-      // stat.changePowerSavingStatus(false);
   });
+
+
 });
