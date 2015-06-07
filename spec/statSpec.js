@@ -7,13 +7,18 @@ describe("Stat", function() {
   });
 
   describe("By default, ", function() {
-    it("has a temperature of 20 degrees", function() {
+    it("starts at 20 degrees", function() {
       expect(stat.currentTemperature).toBe(20);
     });
 
     it("has a minimum temperature of 10 degrees", function() {
       stat.decreaseTemperature(12);
       expect(stat.currentTemperature).toBe(10);
+    });
+
+    it("has a maximum temperature of 50 degrees", function() {
+      stat.increaseTemperature(31);
+      expect(stat.currentTemperature).toBe(50);
     });
   });
 
@@ -34,7 +39,9 @@ describe("Stat", function() {
       expect(stat.powerSavingStatus).toBe(true);
     });
 
-    xit("which when activated, limits the temperature to 25 degrees", function() {
+    it("which when activated, limits the temperature to 25 degrees", function() {
+      stat.increaseTemperature(6);
+      expect(stat.currentTemperature).toEqual(25);
     });
 
   });
