@@ -53,6 +53,30 @@ describe("Stat", function() {
     });
   });
 
+  describe("changes colour depending on energy usage, ", function() {
+    it("turns 'GREEN' when set to 17 degrees or lower", function() {
+      stat.decreaseTemperature(3);
+      expect(stat.currentTemperature).toEqual(17);
+      stat.activateColourDisplay();
+      expect(stat.energyUsageIndicator).toEqual('green');
+    });
+
+    it("turns 'YELLOW' when set to 24 degrees or lower", function() {
+      stat.increaseTemperature(4);
+      expect(stat.currentTemperature).toEqual(24);
+      stat.activateColourDisplay();
+      expect(stat.energyUsageIndicator).toEqual('yellow');
+    });
+
+    it("turns 'RED' when set to 25 degrees or higher", function() {
+      stat.togglePowerSavingMode();
+      stat.increaseTemperature(6);
+      expect(stat.currentTemperature).toEqual(26);
+      stat.activateColourDisplay();
+      expect(stat.energyUsageIndicator).toEqual('red');
+    });
+  });
+
   describe("has a reset button ", function() {
     it("which when activated, resets the temperature to 20 degrees", function() {
       stat.increaseTemperature(2);
@@ -60,6 +84,5 @@ describe("Stat", function() {
       expect(stat.currentTemperature).toEqual(20);
     });
   });
-
 
 });

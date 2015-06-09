@@ -32,6 +32,16 @@ Stat.prototype.togglePowerSavingMode = function() {
   }
 };
 
+Stat.prototype.activateColourDisplay = function() {
+  if (this.currentTemperature < 18) {
+    this.energyUsageIndicator = 'green';
+  } else if (this.currentTemperature < 25) {
+    this.energyUsageIndicator = 'yellow';
+  } else {
+    this.energyUsageIndicator = 'red';
+  }
+};
+
 Stat.prototype.resetTemperature = function() {
   this.currentTemperature = this.defaultTemperature;
 };
