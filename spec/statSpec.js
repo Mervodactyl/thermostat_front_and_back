@@ -58,14 +58,14 @@ describe("Stat", function() {
       stat.decreaseTemperature(3);
       expect(stat.currentTemperature).toEqual(17);
       stat.activateColourDisplay();
-      expect(stat.energyUsageIndicator).toEqual('green');
+      expect(stat.energyUsageIndicator).toEqual('low-usage');
     });
 
     it("turns 'YELLOW' when set to 24 degrees or lower", function() {
       stat.increaseTemperature(4);
       expect(stat.currentTemperature).toEqual(24);
       stat.activateColourDisplay();
-      expect(stat.energyUsageIndicator).toEqual('yellow');
+      expect(stat.energyUsageIndicator).toEqual('medium-usage');
     });
 
     it("turns 'RED' when set to 25 degrees or higher", function() {
@@ -73,7 +73,7 @@ describe("Stat", function() {
       stat.increaseTemperature(6);
       expect(stat.currentTemperature).toEqual(26);
       stat.activateColourDisplay();
-      expect(stat.energyUsageIndicator).toEqual('red');
+      expect(stat.energyUsageIndicator).toEqual('high-usage');
     });
   });
 
