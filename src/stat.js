@@ -34,11 +34,11 @@ Stat.prototype.togglePowerSavingMode = function() {
 
 Stat.prototype.activateColourDisplay = function() {
   if (this.currentTemperature < 18) {
-    this.energyUsageIndicator = 'green';
+    this.energyUsageIndicator = 'low-usage';
   } else if (this.currentTemperature < 25) {
-    this.energyUsageIndicator = 'yellow';
+    this.energyUsageIndicator = 'medium-usage';
   } else {
-    this.energyUsageIndicator = 'red';
+    this.energyUsageIndicator = 'high-usage';
   }
 };
 
