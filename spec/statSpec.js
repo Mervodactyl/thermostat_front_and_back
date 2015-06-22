@@ -70,8 +70,8 @@ describe("Stat", function() {
 
     it("turns 'RED' when set to 25 degrees or higher", function() {
       stat.togglePowerSavingMode();
-      stat.increaseTemperature(6);
-      expect(stat.currentTemperature).toEqual(26);
+      stat.increaseTemperature(5);
+      expect(stat.currentTemperature).toEqual(25);
       stat.activateColourDisplay();
       expect(stat.energyUsageIndicator).toEqual('high-usage');
     });

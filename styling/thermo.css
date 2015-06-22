@@ -1,0 +1,55 @@
+@import url('normalize.css');
+
+html {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+     -moz-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html, body {
+  padding: 5%;
+  height: 100%;
+  width: 100%;
+  background-color: #BEF781;
+}
+
+h1 {
+  color: blue;
+  border: 3px solid black;
+  background-color: #2EFEF7;
+}
+
+#controls {
+  border: 3px solid black;
+  background-color: #FF8000;
+}
+  div {
+    border: 3px dotted black;
+    background-color: #D358F7;
+  }
+
+#counter {
+  border: 3px solid black;
+  background-color: #FF0040;
+}
+  h2 {
+    border: 3px dotted black;
+    background-color: #74DF00;
+  }
+    h3 {
+      border: 3px dotted black;
+      background-color: #0040FF;
+    }
+
+#links {
+  border: 3px dotted black;
+  background-color: #F7FE2E;
+}
