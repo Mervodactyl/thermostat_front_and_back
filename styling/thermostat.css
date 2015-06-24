@@ -6,6 +6,7 @@ html {
           box-sizing: border-box;
               height: 100%;
                width: 100%;
+               /*z-index: -1;*/
 }
 
 *,
@@ -18,6 +19,7 @@ html {
 }
 
 body {
+  padding: 20px;
   height: 100%;
   width: 100%;
   border-radius: 50px;
@@ -25,140 +27,22 @@ body {
   background-color: #BEF781;
 }
 
-.title-container {
-  float: left;
-  height:100px;
-  width: 30%;
+#center-banner {
+  background: white;
+  margin: 20px 0;
   padding: 10px;
-  background-color: #FE2EC8;
-  border: 3px solid black;
+  text-align: center;
 }
 
-.underline {
-  clear: both;
-  width:30%;
-  height: 20px;
-  background-color: green;
-  border: 3px solid dotted;
+#center-banner div {
+  background: black;
+  color: white;
+  padding: 15px;
+  max-width: 125px;
+  margin: 5px;
 }
 
-.title-container#contain-thermo {
-  margin-top: 250px;
-  transform: rotate(-90deg);
+#center-banner div {
+  display: inline-block;
+  text-align: left;
 }
-  h1.title#title-one {
-    padding-left: 20px;
-    background-color: orange;
-  }
-    .underline#line-one {
-      transform: rotate(-90deg);
-      margin-left: 100px;
-    }
-
-.button {
-  position: absolute;
-  top: 30%;
-  left: 30%;
-  margin-left: -150px;
-  margin-top: -150px;
-  height: 100px;
-  width: 100px;
-  border: 3px solid black;
-}
-  .button#psm-button {
-    margin-left: 0px;
-    margin-top: 180px;
-    background-color: #FF0000;
-    border: 3px solid black;
-  }
-  .button#up-button {
-    margin-left: 200px;
-    margin-top: 0px;
-    margin-bottom: 150px;
-    background-color: #FF00FF;
-    border: 3px solid black;
-  }
-  .button#reset-button {
-    margin-left: 500px;
-    margin-top: 150px;
-    background-color: #A9F5F2;
-    border: 3px solid black;
-  }
-  .button#down-button {
-    margin-left: 200px;
-    margin-top: 350px;
-    background-color: #F7FE2E;
-    border: 3px solid black;
-  }
-
-#counter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
-  height:300px;
-  width: 300px;
-  border: 3px solid black;
-  background-color: #FF8000;
-}
-
-/*#counter {
-  border: 3px solid black;
-  background-color: #FF0040;
-}*/
-  h2 {
-    border: 3px dotted black;
-    background-color: #74DF00;
-  }
-    h3 {
-      border: 3px dotted black;
-      background-color: #0040FF;
-    }
-
-.title-container#contain-fantas {
-  float: right;
-  margin-top: 250px;
-  /*margin-right: 550px;*/
-  transform: rotate(90deg);
-}
-  h1.title#title-two {
-    padding-left: 20px;
-    display: inline-block;
-    width: 170px;
-    background-color: #2EFEF7;
-  }
-    #links {
-      display: inline-block;
-      padding-left: 30px;
-    }
-    #links .nav-bar {
-      list-style: none;
-      padding: 10 10px;
-      border: 2px solid black;
-    }
-      #links .nav-bar li {
-        display: inline;
-        height:40px;
-        width: 40px;
-        padding-left:10px;
-        border: 2px solid black;
-      }
-        #links .nav-bar li a {
-          text-decoration: none;
-          /*padding: 10 10px;*/
-          background-color: blue;
-        }
-          #links .nav-bar li a img {
-            height:40px;
-            width: 40px;
-          }
-  .underline#line-two {
-    clear: both;
-    width:30%;
-    height: 20px;
-    background-color: green;
-    border: 3px solid dotted;
-    transform: rotate(90deg);
-    margin-left: 950px;
-  }
