@@ -1,4 +1,4 @@
-# Thermostat
+  # Thermostat
 
 Written in JavaScript
 
@@ -14,6 +14,3 @@ Specifications as follows:
 * Power saving mode is on by default
 * You can reset the temperature to 20 by hitting the reset button
 * The thermostat should color the display based on energy usage - < 18 is green, < 25 is yellow, otherwise red
-
-
-[power circle](https://medium.com/@andsens/radial-progress-indicator-using-css-a917b80c43f9)
