@@ -6,6 +6,7 @@ html {
           box-sizing: border-box;
               height: 100%;
                width: 100%;
+    background-color: #000000;
 }
 
 *,
@@ -21,16 +22,8 @@ body {
   width: 100%;
   padding: ;
   border: ;
-  background-color: white;
+  background-color: #000000;
 }
-/*
-height: ;
-width: ;
-
-padding: 20px;
-border: 2px solid black;
-background-color: ;
-*/
 
 @media only screen and (min-width: 768px) {
 /* tablets and desktop */
@@ -39,65 +32,80 @@ background-color: ;
   margin: 60 0 60 0%;
   height: 10px;
   width: ;
-  border: 2px solid black;
-  background-color: red;
+  background-color: #f20303;
+  -webkit-box-shadow: 0px 0px 50px 5px rgba(242,3,3,0.42);
+  z-index: 10;
 }
 
-#counter-container {
-  padding: 10px;
-  text-align: center;
-  border: 2px solid black;
-  background-color: blue;
-}
   .counter {
     padding: 10px;
     text-align: center;
-    border: 2px solid black;
-    background-color: yellow;
   }
 
 #temperature {
   margin: 0 auto;
-  font-size: 15em;
+  font-size: 12em;
   max-width: 21%;
+  color: #FFFFFF;
 }
   #temperature:after {
     content: "°";
+    color: #FFFFFF;
   }
 
 #centigrade {
   font-size: 1em;
+  color: #FFFFFF;
 }
-
-
-
 
 #buttons-container {
   margin: 20px 0;
   padding: 10px;
   display: flex;
   justify-content: center;
-  border: 2px solid black;
-  background-color: orange;
 }
 
 a {
   margin: 10px;
   padding: 10px;
+  text-decoration: none;
   text-align: center;
   color: white;
-  border: 2px solid black;
-  background-color: green;
+  border: 2px solid white;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
 }
-li {
-  margin-top: 10%;
-  margin-bottom: 10%;
+  li {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+
+.arrows {
+  min-width: 10%;
+  font-size: 5em;
+  color: #f20303;
+
+  /*max-width: 30%;*/
 }
+
+#psm-indicator {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+#psm-bar {
+  margin: 0;
+}
+
+#reset-button {
+  margin: 0;
+  margin-top: 20px;
+  padding: 10 60 10 60px;
+}
+
 
 }
 
