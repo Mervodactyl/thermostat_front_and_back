@@ -57,7 +57,7 @@ body {
   }
 
 #centigrade {
-  margin-top: 0;
+  margin-top: 2px;
   padding: 2px;
   font-size: 1em;
   color: #FAFAFA;
@@ -68,6 +68,7 @@ body {
   padding: 10px;
   display: flex;
   justify-content: center;
+  border: 2px solid white;
 }
 
 a {
@@ -76,7 +77,9 @@ a {
   text-decoration: none;
   text-align: center;
   color: #FAFAFA;
-  border: 1px solid #A4A4A4;
+  border: 2px solid white;
+
+  /*border: 1px solid #A4A4A4;*/
 }
 
 .arrows {
@@ -87,21 +90,26 @@ a {
 }
 
 #psm-indicator {
-  padding: 0;
-  margin: 0;
-  border: none;
+  display: block;
+  float: left;
+  height: 7.5%;
   color: #FAFAFA;
-}
-#psm-bar {
-  margin: 0;
+  /*border: 2px solid white;*/
 }
 
 #reset-button {
-  margin: 0;
+  display: block;
+clear: both;
+  height: 5.5%;
+  width: 14%;
+  /*margin: 0;
   margin-top: 20px;
-  padding: 10 60 10 60px;
+  padding: 10 60 10 60px;*/
 }
 
+/*#psm-bar {
+  margin: 0;
+}*/
 
 }
 
