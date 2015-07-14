@@ -99,7 +99,7 @@ a {
 
 #reset-button {
   display: block;
-clear: both;
+  clear: both;
   height: 5.5%;
   width: 14%;
   /*margin: 0;
@@ -112,6 +112,27 @@ clear: both;
 }*/
 
 }
+
+/*.high-usage {
+  color: #f20303;
+}
+.medium-usage {
+  color: #FF8000;
+}
+.low-usage {
+  color: #04B404;
+}
+.power-line.high-usage {
+  background-color: #f20303;
+  /*color: black;*/
+}
+.power-line.medium-usage {
+  background-color: #FF8000;
+  /*color: black;*/
+}
+.power-line.low-usage {
+  background-color: #04B404;
+}*/
 
 
 
