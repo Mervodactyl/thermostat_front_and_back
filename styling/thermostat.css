@@ -1,14 +1,11 @@
+/*==============
+  IMPORTS
+================*/
 @import url('normalize.css');
 
-html {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-              height: 100%;
-               width: 100%;
-    background-color: #000000;
-}
-
+/*==============
+  LAYOUT
+================*/
 *,
 *::before,
 *::after {
@@ -17,32 +14,62 @@ html {
           box-sizing: inherit;
 }
 
+html {
+  /*height: 100%;
+  width: 100%;*/
+  background-color: #000000;
+}
+
 body {
   height: 100%;
   width: 100%;
-  padding: ;
+  padding-top: 8em;
   border: ;
   background-color: #000000;
 }
 
-@media only screen and (min-width: 768px) {
+/*Don't leave unused things in your code!*/
+/*@media only screen and (min-width: 768px) { }*/
 /* tablets and desktop */
 
 .power-line {
-  margin: 60 0 60 0%;
-  height: 5px;
-  width: ;
-  background-color: #f20303;
-  -webkit-box-shadow: 0px 0px 40px 2px rgba(242,3,3,1);
+  padding: 2em 0;
+  margin-bottom: 2em;
+  border-top: solid 10px #f20303;
+  border-bottom: solid 10px #f20303;
+  border-left: solid 40px black;
+  border-right: solid 40px black;
+/*  -webkit-box-shadow: 0px 0px 40px 2px rgba(242,3,3,1);*/
+  box-shadow: 0px 0px 40px rgba(242,3,3,1), rgba(242,3,3,1) 0px 0px 40px inset;
 }
-  #top {
-    margin-top: 11%;
-  }
 
-  .counter {
-    padding: 2px;
-    text-align: center;
-  }
+/*==============
+  COLOURS
+================*/
+
+.high-usage {
+  color: #f20303;
+}
+.medium-usage {
+  color: #FF8000;
+}
+.low-usage {
+  color: #04B404;
+}
+.power-line.high-usage {
+  background-color: #f20303;
+}
+.power-line.medium-usage {
+  background-color: #FF8000;
+}
+.power-line.low-usage {
+  background-color: #04B404;
+}
+
+.counter {
+  padding: 2px;
+  text-align: center;
+}
 
 #temperature {
   margin: 0 auto;
@@ -56,18 +83,25 @@ body {
     color: #FAFAFA;;
   }
 
-#centigrade {
+/*Not a great name - 'temperature-label' would be better.
+*/#centigrade {
+/*  Remember our vertical rhythm exercise? Try and make elements have margins on the bottom, not the top. Push down, not push up.*/
   margin-top: 2px;
   padding: 2px;
+/*  Is this size declaration necessary? Isn't it 1em as default?*/
   font-size: 1em;
   color: #FAFAFA;
 }
 
 #buttons-container {
   margin: 20px 0;
+/*  Why do you have padding on the inside of an invisible container?*/
   padding: 10px;
+/*  I don't think this is needed*/
   display: flex;
+/*  or this*/
   justify-content: center;
+/*  2px is too thick*/
   border: 2px solid white;
 }
 
@@ -113,26 +147,7 @@ a {
 
 }
 
-/*.high-usage {
-  color: #f20303;
-}
-.medium-usage {
-  color: #FF8000;
-}
-.low-usage {
-  color: #04B404;
-}
-.power-line.high-usage {
-  background-color: #f20303;
-  /*color: black;*/
-}
-.power-line.medium-usage {
-  background-color: #FF8000;
-  /*color: black;*/
-}
-.power-line.low-usage {
-  background-color: #04B404;
-}*/
+
 
 
 

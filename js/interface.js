@@ -1,45 +1,39 @@
 console.log("testing, testing, 1, 2, 3, Thunderbirds are go!");
-var stat = new Stat();
+var stat = new Stat(); // works
 
 var updateTemperature = function() {
   $("#temperature").text(stat.currentTemperature);
-  $("body, .power-line").attr("class", stat.activateColourDisplay());
-};
+  // $("body, .power-line").attr("class", stat.activateColourDisplay());
+}; // second line not activated - css questions
 
 $(document).ready(function() {
   updateTemperature();
 
   $("#plus").on("click", function(event) {
     event.preventDefault();
-    stat.increaseTemperature();
+    stat.increaseTemperature(1);
     updateTemperature();
   });
 
-  $("#minus").on("click", function() {
+  $("a.arrows#minus").on("click", function(event) {
     event.preventDefault();
-    stat.decreaseTemperature();
+    stat.decreaseTemperature(1);
     updateTemperature();
   })
 
-  $("#reset-button").on("click", function() {
+  $("#reset-button").on("click", function(event) {
     event.preventDefault();
     stat.resetTemperature();
     updateTemperature();
   })
 
-  $(".psm-on").on("click", function() {
+  $(".power-line").on("click", function(event) {
     event.preventDefault();
-    stat.switchPowerSavingModeOn();
-    $(this).addClass();
+    stat.togglePowerSavingMode();
+    $(this).toggleClass();
     updateTemperature();
-  })
-
-  $(".psm-off").on("click", function() {
-    event.preventDefault();
-    stat.switchPowerSavingModeOff();
-    $(this).addClass();
-    updateTemperature();
-  })
+  }) // how to toggle modes????
+// think about checkboxes
 });
 
 
