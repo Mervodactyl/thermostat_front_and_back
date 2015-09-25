@@ -1,25 +1,30 @@
-<!DOCTYPE html>
+<!DOCTYPE html5>
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no,
+    initial-scale=1, maximum-scale=1, minimum-scale=1'/>
     <title>Theromostatastic!</title>
     <link href="styling/thermostat.css" type="text/css" rel="stylesheet">
   </head>
     <body>
-      <main>
-
-      <div class="power-line">
-        <p class="counter" id="temperature">??</p>
-        <p class="counter" id="centigrade">CENTIGRADE</p>
-      </div>
-      <div id="buttons-container">
-        <a href="" class="arrows" id="minus">&ndash;</a>
-        <a href="" class="psm" id="psm-indicator">POWER SAVING MODE</a>
-        <a href="" class="psm" id="reset-button">RESET</a>
-        <a href="" class="arrows" id="plus">+</a>
-      </div>
-
-      </main>
+      <section class="power-line">
+        <div class="temperature-container">
+          <p class="temperature-counter" id="temperature">??</p>
+          <p class="temperature-type" id="temperature-label">CENTIGRADE</p>
+        </div>
+      </section>
+      <button name="psm-button" class="psm-button-indicator">
+        <a href="#" id="psm-indicator">POWER SAVING MODE</a>
+      </button>
+      <div class="psm-line-indicator"></div>
+      <button name="temperature-reset-button" class="temperature-reset-container">
+        <a href="#" id="reset-button">RESET</a>
+      </button>
+      <section class="plus-minus-buttons-container">
+        <button name="minus-button" class="minus-button-indicator"><a href="#" id="minus">&ndash;</a></button>
+        <button name="plus-button" class="plus-button-indicator"><a href="#" id="plus">+</a></button>
+      </section>
       <script src="js/jquery-2.1.4.min.js"></script>
       <script src="src/stat.js"></script>
       <script src="js/interface.js"></script>

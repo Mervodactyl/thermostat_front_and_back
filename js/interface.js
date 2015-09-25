@@ -3,7 +3,7 @@ var stat = new Stat(); // works
 
 var updateTemperature = function() {
   $("#temperature").text(stat.currentTemperature);
-  // $("body, .power-line").attr("class", stat.activateColourDisplay());
+  $("body, .power-line").attr("class", stat.activateColourDisplay());
 }; // second line not activated - css questions
 
 $(document).ready(function() {
@@ -32,7 +32,7 @@ $(document).ready(function() {
     stat.togglePowerSavingMode();
     $(this).toggleClass();
     updateTemperature();
-  }) // how to toggle modes????
+  }) // toggle modes????
 // think about checkboxes
 });
 
