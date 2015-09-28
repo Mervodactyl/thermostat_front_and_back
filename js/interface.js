@@ -4,7 +4,7 @@ var stat = new Stat(); // works
 var updateTemperature = function() {
   $("#temperature").text(stat.currentTemperature);
   $("body, .power-line").attr("class", stat.activateColourDisplay());
-}; // second line not activated - css questions
+}; // power-line not starting on correct colour
 
 $(document).ready(function() {
   updateTemperature();
@@ -15,7 +15,7 @@ $(document).ready(function() {
     updateTemperature();
   });
 
-  $("a.arrows#minus").on("click", function(event) {
+  $("#minus").on("click", function(event) {
     event.preventDefault();
     stat.decreaseTemperature(1);
     updateTemperature();
@@ -32,8 +32,7 @@ $(document).ready(function() {
     stat.togglePowerSavingMode();
     $(this).toggleClass();
     updateTemperature();
-  }) // toggle modes????
-// think about checkboxes
+  }) // powerline not changing colour
 });
 
 
