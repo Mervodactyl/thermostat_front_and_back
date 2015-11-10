@@ -1,159 +1,136 @@
-/* All styles for directory 'thermostat_front_and_back' */
+/*=== Styling for 'thermostat_front_and_back' ===*/
 
-/*==============
-  IMPORTS
-================*/
-@import url('normalize.css');
+/*=== IMPORTS ===*/
 
-/*==============
-  LAYOUT
-================*/
+@import url("meyer-reset.css");
+@import url("colour-display.css");
+@import url(https://fonts.googleapis.com/css?family=Oswald:700);
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
 
-@media (min-width: 320px) {
+/*=== CSS ===*/
 
-*,
-*::before,
-*::after {
+* {
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-html {
-  background-color: #000;
-  color: #fff;
-}
-
 body {
-  height: 100vh;
-  width: 100vw;
   overflow-x: hidden;
-}
-
-a {
-  text-decoration: none;
-  color: #fff;
-}
-
-button {
-  border: 0px solid #000;
-  color: #fff;
+  overflow-y: hidden;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-family: 'Lato', sans-serif;
+  color: #f0f0f0;
   background-color: #000;
 }
 
-.power-line {
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+h2 {
+  font-size: 2.8vh;
+}
+
+.button {
+  font-size: 2.8vh;
+}
+
+#thermostat-display {
+  margin: 6vh 0;
+  height: 50vh;
+  padding-top: 10vh;
+}
+
+#temperature-digits, #temperature-digits:after {
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+}
+
+#temperature-digits {
+  position: relative;
+  font-size: 22vh;
+  height: 1em;
+  margin-bottom: 0.08em;
+}
+
+#temperature-digits:after {
+  content: "\00B0"; /*° symbol*/
   position: absolute;
-  top: 10%;
-  left: -5%;
-  height: 45%;
-  width: 110%;
-  border: 5px solid #F20301;
-  box-shadow: 0px 0px 40px rgba(242,3,3,1), rgba(242,3,3,1) 0px 0px 40px inset;
+  font-size: 14vh;
 }
 
-.temperature-container {
-  margin-top: 10%;
-  text-align: center;
+#thermostat-controls {
+  height: 38vh;
 }
 
-.temperature-counter {
-  margin: 0;
-  margin-left: 13%;
-  font-size: 6em;
+.settings-adjustment {
+  display: block;
+  margin: 0 auto;
+  width: 75vw;
 }
 
-.temperature-counter:after {
-  content:'\00B0';
+#power-saving-mode {
+  margin-bottom: 4vh;
 }
 
-.temperature-degree-symbol {
-  display: inline;
-  color: #fff;
-  text-align: center;
-  font-size: 2em;
-}
-
-.temperature-type {
-  margin: 0;
-  font-size: 1em;
-}
-
-.psm-button-indicator {
-  margin-top: 90%;
-  margin-left: 25%;
-  padding: 0;
-}
-
-.psm-line-indicator {
-  margin-top: 3%;
-  margin-left: 25%;
+#power-saving-mode-indicator {
+  margin-bottom: 5vh;
   height: 5px;
-  width: 56%;
-  background-color: #F20301;
-  -webkit-box-shadow: 0px 0px 30px 2px rgba(255,0,0,1);
+  background-color: #f0f0f0;
+  -webkit-box-shadow: 0px 0px 30px 2px rgba(240,240,240,1);
 }
 
-.temperature-reset-container {
-  margin-top: 10%;
-  margin-left: 25%;
-  height: 6.5%;
-  width: 56%;
+#reset-temperature {
+  margin-bottom: 5vh;
+  padding: 5px;
   border: 1px solid #f0f0f0;
 }
 
-.plus-minus-buttons-container button {
+.temperature-adjustment {
+  display: inline;
   float: left;
-  margin-top: 10%;
-  border: 0px solid #000;
-  border-top: 1px solid #f0f0f0;
-  height: 14%;
   width: 50%;
-  font-size: 3em;
-  background-color: #000;
+  height: 15vh;
+  font-size: 10vh;
+  line-height: 15vh;
+  border-top: 1px solid #f0f0f0;
 }
 
-.plus-minus-buttons-container .minus-button-indicator {
+#decrease-temperature {
   border-right: 1px solid #f0f0f0;
 }
 
-/*==============
-  COLOURS
-================*/
-
-.high-usage {
-  color: #f20303;
-}
-.medium-usage {
-  color: #FF8000;
-}
-.low-usage {
-  color: #04B404;
-}
-.power-line.high-usage {
-  background-color: #f20303;
-}
-.power-line.medium-usage {
-  background-color: #FF8000;
-}
-.power-line.low-usage {
-  background-color: #04B404;
-}
-
-}
-
+/* breakpoint */
 @media (min-width: 480px) {
+  #thermostat-display {
+    margin: 10vh 0;
+  }
 
+  .settings-adjustment {
+    width: 45vw;
+  }
 
+  .temperature-adjustment {
+    width: 20vw;
+    position: relative;
+    top: -19vh;
+    border: 1px solid #f0f0f0;
+  }
+
+  #decrease-temperature {
+    float: left;
+    left: 2.5vw;
+  }
+
+  #increase-temperature {
+    float: right;
+    right: 2.5vw;
+  }
 }
 
-@media (min-width: 768px) {
 
-}
-
-@media (min-width: 992px) {
-
-}
-
-@media (min-width: 1200px) {
-
-}
+/* clean up code - breakpoints and outside etc, use only classes for styling specificity where possible,  chrome workspaces - browser edits saved to atom! */

@@ -1,56 +1,36 @@
 console.log("testing, testing, 1, 2, 3, Thunderbirds are go!");
-var stat = new Stat(); // works
+var stat = new Stat();
 
 var updateTemperature = function() {
-  $("#temperature").text(stat.currentTemperature);
-  $("body, .power-line").attr("class", stat.activateColourDisplay());
-}; // power-line not starting on correct colour
+  $("#temperature-digits").text(stat.currentTemperature);
+  $('body, #thermostat-display').attr('class', stat.activateColourDisplay());
+};
 
 $(document).ready(function() {
   updateTemperature();
 
-  $("#plus").on("click", function(event) {
+  $("#increase-temperature").on("click", function(event) {
     event.preventDefault();
     stat.increaseTemperature(1);
     updateTemperature();
   });
 
-  $("#minus").on("click", function(event) {
+  $("#decrease-temperature").on("click", function(event) {
     event.preventDefault();
     stat.decreaseTemperature(1);
     updateTemperature();
-  })
+  });
 
-  $("#reset-button").on("click", function(event) {
+  $("#reset-temperature").on("click", function(event) {
     event.preventDefault();
     stat.resetTemperature();
     updateTemperature();
-  })
+  });
 
-  $(".power-line").on("click", function(event) {
+  $("#power-saving-mode").on("click", function(event) {
     event.preventDefault();
     stat.togglePowerSavingMode();
-    $(this).toggleClass();
     updateTemperature();
-  }) // powerline not changing colour
+  });
+
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

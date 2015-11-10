@@ -23,12 +23,12 @@ describe("Stat", function() {
   });
 
   describe("current temperature ", function() {
-    it("will increase by 2 when you press the 'UP' button", function() {
+    it("will increase by 1 when you press the 'UP' button", function() {
       stat.increaseTemperature(2);
       expect(stat.currentTemperature).toEqual(22);
     });
 
-    it("will decrease by 2 when you press the 'DOWN' button", function() {
+    it("will decrease by 1 when you press the 'DOWN' button", function() {
       stat.decreaseTemperature(2);
       expect(stat.currentTemperature).toEqual(18);
     });
@@ -36,39 +36,58 @@ describe("Stat", function() {
 
   describe("has a power saving mode(psm)", function() {
     it("which by default, is set to 'ON'", function() {
-      expect(stat.powerSavingStatus).toBe(true);
+      expect(stat.isPowerSavingOn).toBe(true);
     });
 
-    it("which can be set to 'OFF'", function() {
-      stat.togglePowerSavingMode();
-      expect(stat.powerSavingStatus).toBe(false);
-      stat.togglePowerSavingMode();
-      expect(stat.powerSavingStatus).toBe(true);
+    describe("which when  set to 'ON'", function() {
+      it("and the temperature is above 25, returns the current temperature to 25 degrees", function() {
+        stat.togglePowerSavingMode();
+        stat.increaseTemperature(10);
+        stat.togglePowerSavingMode();
+        expect(stat.isPowerSavingOn).toBe(true);
+        expect(stat.currentTemperature).toEqual(25);
+      });
+
+      it("and the temperature is below 25, does not affect the current temperature", function() {
+        stat.togglePowerSavingMode();
+        stat.togglePowerSavingMode();
+        expect(stat.isPowerSavingOn).toBe(true);
+        expect(stat.currentTemperature).toEqual(20);
+      });
+
+      it("can be set to 'OFF'", function() {
+        stat.togglePowerSavingMode();
+        expect(stat.isPowerSavingOn).toBe(false);
+        stat.togglePowerSavingMode();
+        expect(stat.isPowerSavingOn).toBe(true);
+      });
     });
 
-    it("which when 'OFF', limits the temperature to 32 degrees", function() {
-      stat.togglePowerSavingMode();
-      stat.increaseTemperature(13);
-      expect(stat.currentTemperature).toEqual(32);
+    describe("which when set to 'OFF'", function() {
+      it("limits the temperature to 32 degrees", function() {
+        stat.togglePowerSavingMode();
+        stat.increaseTemperature(13);
+        expect(stat.currentTemperature).toEqual(32);
+      });
     });
   });
 
   describe("changes colour depending on energy usage, ", function() {
-    it("turns 'GREEN' when set to 17 degrees or lower", function() {
+    it("turns 'low-usage' when set to 17 degrees or lower", function() {
       stat.decreaseTemperature(3);
       expect(stat.currentTemperature).toEqual(17);
       stat.activateColourDisplay();
       expect(stat.energyUsageIndicator).toEqual('low-usage');
     });
 
-    it("turns 'YELLOW' when set to 24 degrees or lower", function() {
+    it("reflects 'medium-usage' when set to 24 degrees or lower", function() {
       stat.increaseTemperature(4);
       expect(stat.currentTemperature).toEqual(24);
       stat.activateColourDisplay();
       expect(stat.energyUsageIndicator).toEqual('medium-usage');
     });
 
-    it("turns 'RED' when set to 25 degrees or higher", function() {
+    it("turns 'high-usage' when set to 25 degrees or higher", function() {
       stat.togglePowerSavingMode();
       stat.increaseTemperature(5);
       expect(stat.currentTemperature).toEqual(25);
