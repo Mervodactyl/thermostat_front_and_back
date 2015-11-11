@@ -1,4 +1,4 @@
-var Stat = function() {
+var Thermostat = function() {
   this.DEFAULT_TEMP = 20;
   this.currentTemperature = this.DEFAULT_TEMP;
   this.MINIMUM_TEMP = 10;
@@ -10,7 +10,7 @@ var Stat = function() {
 };
 
 
-Stat.prototype.increaseTemperature = function(degreesToChangeBy) {
+Thermostat.prototype.increaseTemperature = function(degreesToChangeBy) {
   if (this.currentTemperature + degreesToChangeBy > this.MAXIMUM_TEMP) {
     this.currentTemperature = this.MAXIMUM_TEMP;
   } else {
@@ -18,7 +18,7 @@ Stat.prototype.increaseTemperature = function(degreesToChangeBy) {
   }
 };
 
-Stat.prototype.decreaseTemperature = function(degreesToChangeBy) {
+Thermostat.prototype.decreaseTemperature = function(degreesToChangeBy) {
   if (this.currentTemperature - degreesToChangeBy < this.MINIMUM_TEMP) {
     this.currentTemperature = this.MINIMUM_TEMP;
   } else {
@@ -26,7 +26,7 @@ Stat.prototype.decreaseTemperature = function(degreesToChangeBy) {
   }
 };
 
-Stat.prototype.togglePowerSavingMode = function() {
+Thermostat.prototype.togglePowerSavingMode = function() {
   if (this.isPowerSavingOn === true) {
     this.isPowerSavingOn = false;
     this.MAXIMUM_TEMP = this.POWER_SAVING_OFF_MAXIMUM_TEMP;
@@ -37,25 +37,25 @@ Stat.prototype.togglePowerSavingMode = function() {
   }
 };
 
-Stat.prototype.temperatureLimitSafeguard = function() {
+Thermostat.prototype.temperatureLimitSafeguard = function() {
   if (this.currentTemperature > this.MAXIMUM_TEMP) {
     this.currentTemperature = this.MAXIMUM_TEMP;
   }
 };
 
-Stat.prototype.activateColourDisplay = function() {
+Thermostat.prototype.energyUsageIndicator = function() {
   if (this.currentTemperature < this.POWER_SAVING_ON_LOW_LIMIT) {
     // this.energyUsageIndicator = 'low-usage';
-    return 'low-usage';
+    return "low-usage";
   } else if (this.currentTemperature < this.POWER_SAVING_ON_MAXIMUM_TEMP) {
     // this.energyUsageIndicator = 'medium-usage';
-    return 'medium-usage';
+    return "medium-usage";
   } else {
     // this.energyUsageIndicator = 'high-usage';
-    return 'high-usage';
+    return "high-usage";
   }
 };
 
-Stat.prototype.resetTemperature = function() {
+Thermostat.prototype.resetTemperature = function() {
   this.currentTemperature = this.DEFAULT_TEMP;
 };

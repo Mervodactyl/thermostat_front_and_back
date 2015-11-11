@@ -3,7 +3,7 @@ var stat = new Stat();
 
 var updateTemperature = function() {
   $("#temperature-digits").text(stat.currentTemperature);
-  $('body, #thermostat-display').attr('class', stat.activateColourDisplay());
+  $('body, #thermostat-display').attr('class', stat.energyUsageIndicator());
 };
 
 $(document).ready(function() {
