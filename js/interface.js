@@ -1,9 +1,9 @@
 console.log("testing, testing, 1, 2, 3, Thunderbirds are go!");
-var stat = new Stat();
+var thermostat = new Thermostat();
 
 var updateTemperature = function() {
-  $("#temperature-digits").text(stat.currentTemperature);
-  $('body, #thermostat-display').attr('class', stat.energyUsageIndicator());
+  $("#temperature-digits").text(thermostat.currentTemperature);
+  $('body, #thermostat-display').attr('class', thermostat.energyUsageIndicator());
 };
 
 $(document).ready(function() {
@@ -11,25 +11,25 @@ $(document).ready(function() {
 
   $("#increase-temperature").on("click", function(event) {
     event.preventDefault();
-    stat.increaseTemperature(1);
+    thermostat.increaseTemperature(1);
     updateTemperature();
   });
 
   $("#decrease-temperature").on("click", function(event) {
     event.preventDefault();
-    stat.decreaseTemperature(1);
+    thermostat.decreaseTemperature(1);
     updateTemperature();
   });
 
   $("#reset-temperature").on("click", function(event) {
     event.preventDefault();
-    stat.resetTemperature();
+    thermostat.resetTemperature();
     updateTemperature();
   });
 
   $("#power-saving-mode").on("click", function(event) {
     event.preventDefault();
-    stat.togglePowerSavingMode();
+    thermostat.togglePowerSavingMode();
     updateTemperature();
   });
 

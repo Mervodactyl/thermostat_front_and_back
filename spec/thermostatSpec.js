@@ -84,7 +84,7 @@ describe("Thermotat", function() {
       thermostat.increaseTemperature(4);
       expect(thermostat.currentTemperature).toEqual(24);
       thermostat.energyUsageIndicator();
-      expect(thermostat.energyUs  ageIndicator).toEqual("medium-usage");
+      expect(thermostat.energyUsageIndicator).toEqual("medium-usage");
     });
 
     it("turns 'high-usage' when set to 25 degrees or higher", function() {
