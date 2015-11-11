@@ -2,8 +2,6 @@
 
 ## *The most Thermostatic app you've ever seen, built from back to front!*
 
-Check it out at [Thermostatic]()
-
 ## __TL;DR:__
 
 This Thermostat App was built from scratch and shows I have a good understanding of Back End code, and how specifically [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) can be used for more than just Front End projects.
