@@ -1,4 +1,4 @@
-describe("Thermotat", function() {
+describe("Thermostat", function() {
 
   var thermostat;
 
@@ -75,24 +75,17 @@ describe("Thermotat", function() {
   describe("changes colour depending on energy usage, ", function() {
     it("turns 'low-usage' when set to 17 degrees or lower", function() {
       thermostat.decreaseTemperature(3);
-      expect(thermostat.currentTemperature).toEqual(17);
-      thermostat.energyUsageIndicator();
-      expect(thermostat.energyUsageIndicator).toEqual("low-usage");
+      expect(thermostat.energyUsageIndicator()).toEqual("low-usage");
     });
 
     it("reflects 'medium-usage' when set to 24 degrees or lower", function() {
       thermostat.increaseTemperature(4);
-      expect(thermostat.currentTemperature).toEqual(24);
-      thermostat.energyUsageIndicator();
-      expect(thermostat.energyUsageIndicator).toEqual("medium-usage");
+      expect(thermostat.energyUsageIndicator()).toEqual("medium-usage");
     });
 
     it("turns 'high-usage' when set to 25 degrees or higher", function() {
-      thermostat.togglePowerSavingMode();
       thermostat.increaseTemperature(5);
-      expect(thermostat.currentTemperature).toEqual(25);
-      thermostat.energyUsageIndicator();
-      expect(thermostat.energyUsageIndicator).toEqual("high-usage");
+      expect(thermostat.energyUsageIndicator()).toEqual("high-usage");
     });
   });
 

@@ -3,7 +3,7 @@ var Thermostat = function() {
   this.currentTemperature = this.DEFAULT_TEMP;
   this.MINIMUM_TEMP = 10;
   this.isPowerSavingOn = true;
-  this.POWER_SAVING_ON_LOW_LIMIT = 18;
+  this.LOW_USAGE_LIMIT = 18;
   this.MAXIMUM_TEMP = 25;
   this.POWER_SAVING_ON_MAXIMUM_TEMP = 25;
   this.POWER_SAVING_OFF_MAXIMUM_TEMP = 32;
@@ -44,7 +44,7 @@ Thermostat.prototype.temperatureLimitSafeguard = function() {
 };
 
 Thermostat.prototype.energyUsageIndicator = function() {
-  if (this.currentTemperature < this.POWER_SAVING_ON_LOW_LIMIT) {
+  if (this.currentTemperature < this.LOW_USAGE_LIMIT) {
     // this.energyUsageIndicator = 'low-usage';
     return "low-usage";
   } else if (this.currentTemperature < this.POWER_SAVING_ON_MAXIMUM_TEMP) {
