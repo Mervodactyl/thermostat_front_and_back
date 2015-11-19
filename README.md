@@ -23,7 +23,7 @@ The Specifications were as follows:
 
 Desktop View                                                               |  Mobile View
 :-------------------------------------------------------------------------:|:----------------------------------------------------------------------:
-![Desktop view of website](images/desktopView.png "Desktop view of sassy Digimon web page") |  ![Mobile view of Web Page](images/mobileView.png "Mobile view of sassy Digimon web page")
+![Desktop view of website](images/desktopView.png "Desktop view of Thermostat web page") |  ![Mobile view of Web Page](images/mobileView.png "Mobile view of Thermostat web page")
 
 ## So hot its cool
 
